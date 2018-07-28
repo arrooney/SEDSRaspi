@@ -30,7 +30,7 @@ int main (int argc, char **argv){
 	startTime=time(NULL);
 	ArvCamera *camera;
 	ArvBuffer *buffer;
-	char name[32];
+	char name[32], name2[32];
 	time_t now;
 	camera=arv_camera_new("Teledyne DALSA-S1176000");
 	
@@ -40,10 +40,15 @@ int main (int argc, char **argv){
 		time_t missionTime;
 		missionTime = now - startTime;
 		sprintf(name, "%d_photo.png", missionTime);
-
+		sprintf(name2, "%d_photo.raw", missionTime);
+		
 		//printf("%s", now);
 		if(ARV_IS_BUFFER(buffer)){
 			printf("opening the file\n");
+			FILE * f;
+			f=fopen(name2, "w");
+			fwrite(&buffer, sizeof(ArvBuffer),1, f);
+			fclose(f);
 			arv_save_png(buffer, name);
 		}else{
 			printf("something went wrong\n");
