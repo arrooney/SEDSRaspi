@@ -8,7 +8,7 @@
 #include <time.h>
 
 /****************************************
-* @photo.c
+* 
 * This code is responsible for capturing image data from 
 * the Teledyne DALSA genicam using an ethernet connection.
 * This code includes the functionality to save images as a .png
@@ -25,44 +25,48 @@
 
 time_t startTime;
 
+void arv_save_png(ArvBuffer * buffer, const char * filename);
 
 int main (int argc, char **argv){
 	startTime=time(NULL);
 	ArvCamera *camera;
 	ArvBuffer *buffer;
-	char name[32], name2[32];
+	char name[32];
+	char bFileCH[16];
 	time_t now;
 	camera=arv_camera_new("Teledyne DALSA-S1176000");
-	
+	sprintf(bFileCH, "%s.txt", argv[1]);
+	FILE * bFile;
+	bFile=fopen(argv[1],"w");
+	fclose(bFile);
 	for (;;){
 		buffer=arv_camera_acquisition(camera, 0);
 		now=time( NULL );
 		time_t missionTime;
 		missionTime = now - startTime;
-		sprintf(name, "%d_photo.png", missionTime);
-		sprintf(name2, "%d_photo.raw", missionTime);
 		
-		//printf("%s", now);
+		sprintf(name, "%d_photo_%s.png", missionTime, argv[1]);
+		
 		if(ARV_IS_BUFFER(buffer)){
-			printf("opening the file\n");
-			FILE * f;
-			f=fopen(name2, "w");
-			fwrite(&buffer, sizeof(ArvBuffer),1, f);
-			fclose(f);
+			//printf("opening the file\n");
+			//FILE * f;
+			//f=fopen(name2, "w");
+			//fwrite(&buffer, sizeof(ArvBuffer),1, f);
+			//fclose(f);
 			arv_save_png(buffer, name);
 		}else{
 			printf("something went wrong\n");
 		}
 	
-		g_clear_object(&buffer);
-		sleep(5);
+		//g_clear_object(&buffer);
+		sleep(1);
 	}
 	g_clear_object(&camera);
 	return 0;
 }
 
 void arv_save_png(ArvBuffer * buffer, const char * filename){
-	assert(arv_buffer_get_payload_type(buffer) == ARV_BUFFER_PAYLOAD_TYPE_IMAGE);
+	//assert(arv_buffer_get_payload_type(buffer) == ARV_BUFFER_PAYLOAD_TYPE_IMAGE);
 
 	size_t bufferSize;
 	char * bufferData = (char*)arv_buffer_get_data(buffer, &bufferSize);

@@ -114,8 +114,8 @@ host_triplet = armv7l-unknown-linux-gnueabihf
 bin_PROGRAMS = arv-fake-gv-camera-0.6$(EXEEXT) \
 	arv-tool-0.6$(EXEEXT) \
 	arv-test-0.6$(EXEEXT)
-#am__append_5 = Aravis-0.6.gir
-#am__append_6 = $(gir_DATA) $(typelib_DATA)
+am__append_5 = Aravis-0.6.gir
+am__append_6 = $(gir_DATA) $(typelib_DATA)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/appstream-xml.m4 \
@@ -432,14 +432,14 @@ INTLTOOL_V_MERGE_OPTIONS = $(intltool__v_merge_options_$(V))
 INTLTOOL__v_MERGE_ = $(INTLTOOL__v_MERGE_$(AM_DEFAULT_VERBOSITY))
 INTLTOOL__v_MERGE_0 = @echo "  ITMRG " $@;
 INTL_MACOSX_LIBS = 
-INTROSPECTION_CFLAGS = 
-INTROSPECTION_COMPILER = 
-INTROSPECTION_GENERATE = 
-INTROSPECTION_GIRDIR = 
-INTROSPECTION_LIBS = 
-INTROSPECTION_MAKEFILE = 
-INTROSPECTION_SCANNER = 
-INTROSPECTION_TYPELIBDIR = 
+INTROSPECTION_CFLAGS = -pthread -I/usr/include/gobject-introspection-1.0 -I/usr/include/glib-2.0 -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include
+INTROSPECTION_COMPILER = /usr/bin/g-ir-compiler
+INTROSPECTION_GENERATE = /usr/bin/g-ir-generate
+INTROSPECTION_GIRDIR = /usr/share/gir-1.0
+INTROSPECTION_LIBS = -lgirepository-1.0 -lgobject-2.0 -lglib-2.0
+INTROSPECTION_MAKEFILE = /usr/share/gobject-introspection-1.0/Makefile.introspection
+INTROSPECTION_SCANNER = /usr/bin/g-ir-scanner
+INTROSPECTION_TYPELIBDIR = /usr/lib/arm-linux-gnueabihf/girepository-1.0
 LCOV = 
 LD = /usr/bin/ld
 LDFLAGS = 
@@ -648,24 +648,24 @@ CLEANFILES = $(BUILT_SOURCES) $(am__append_6)
 INTROSPECTION_GIRS = $(am__append_5)
 INTROSPECTION_SCANNER_ARGS = --add-include-path=$(srcdir)
 INTROSPECTION_COMPILER_ARGS = --includedir=$(srcdir)
-#introspection_files = $(ARAVIS_SRCS) \
-#		      $(ARAVIS_HDRS)
+introspection_files = $(ARAVIS_SRCS) \
+		      $(ARAVIS_HDRS)
 
-#introspection_generated_files = \
-#		      arvenumtypes.c \
-#		      arvenumtypes.h
+introspection_generated_files = \
+		      arvenumtypes.c \
+		      arvenumtypes.h
 
-#Aravis_0_6_gir_INCLUDES = GObject-2.0 Gio-2.0
-#Aravis_0_6_gir_SCANNERFLAGS = --identifier-prefix=Arv --warn-all
-#Aravis_0_6_gir_CFLAGS = $(INCLUDES) -I$(top_srcdir)/src -DARAVIS_COMPILATION
-#Aravis_0_6_gir_LIBS = libaravis-0.6.la
-#Aravis_0_6_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files)) \
-#					  $(addprefix $(builddir)/,$(introspection_generated_files))
+Aravis_0_6_gir_INCLUDES = GObject-2.0 Gio-2.0
+Aravis_0_6_gir_SCANNERFLAGS = --identifier-prefix=Arv --warn-all
+Aravis_0_6_gir_CFLAGS = $(INCLUDES) -I$(top_srcdir)/src -DARAVIS_COMPILATION
+Aravis_0_6_gir_LIBS = libaravis-0.6.la
+Aravis_0_6_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files)) \
+					  $(addprefix $(builddir)/,$(introspection_generated_files))
 
-#girdir = $(datadir)/gir-1.0
-#gir_DATA = $(INTROSPECTION_GIRS)
-#typelibdir = $(libdir)/girepository-1.0
-#typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
+girdir = $(datadir)/gir-1.0
+gir_DATA = $(INTROSPECTION_GIRS)
+typelibdir = $(libdir)/girepository-1.0
+typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
 all: $(BUILT_SOURCES) arvconfig.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -1420,7 +1420,7 @@ arvenumtypes.c: arvenumtypes.c.template $(ARAVIS_HDRS) $(ARAVIS_HDRS_NO_INTRO) $
 
 -include $(INTROSPECTION_MAKEFILE)
 
-#Aravis-0.6.gir: $(INTROSPECTION_SCANNER) libaravis-0.6.la Makefile
+Aravis-0.6.gir: $(INTROSPECTION_SCANNER) libaravis-0.6.la Makefile
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

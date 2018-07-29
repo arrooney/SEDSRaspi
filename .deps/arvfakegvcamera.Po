@@ -1,5 +1,6 @@
 arvfakegvcamera.o: arvfakegvcamera.c /usr/include/stdc-predef.h arv.h \
- arvtypes.h arvenums.h /usr/include/glib-2.0/glib-object.h \
+ /home/pi/arv/aravis/src/arvtypes.h arvenums.h \
+ /usr/include/glib-2.0/glib-object.h \
  /usr/include/glib-2.0/gobject/gbinding.h /usr/include/glib-2.0/glib.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib/arm-linux-gnueabihf/glib-2.0/include/glibconfig.h \
@@ -118,8 +119,13 @@ arvfakegvcamera.o: arvfakegvcamera.c /usr/include/stdc-predef.h arv.h \
  /usr/include/glib-2.0/gobject/gvaluearray.h \
  /usr/include/glib-2.0/gobject/gvaluetypes.h \
  /usr/include/glib-2.0/gobject/gobject-autocleanups.h arvfeatures.h \
- arvversion.h arvdebug.h arvmisc.h arvstr.h arvzip.h arvsystem.h \
- arvevaluator.h arvdomnode.h /usr/include/glib-2.0/gio/gio.h \
+ /home/pi/arv/aravis/src/arvfeatures.h \
+ /home/pi/arv/aravis/src/arvversion.h arvtypes.h \
+ /home/pi/arv/aravis/src/arvdebug.h /home/pi/arv/aravis/src/arvmisc.h \
+ /home/pi/arv/aravis/src/arvstr.h /home/pi/arv/aravis/src/arvzip.h \
+ /home/pi/arv/aravis/src/arvsystem.h \
+ /home/pi/arv/aravis/src/arvevaluator.h \
+ /home/pi/arv/aravis/src/arvdomnode.h /usr/include/glib-2.0/gio/gio.h \
  /usr/include/glib-2.0/gio/giotypes.h \
  /usr/include/glib-2.0/gio/gioenums.h /usr/include/glib-2.0/gio/gaction.h \
  /usr/include/glib-2.0/gio/gactiongroup.h \
@@ -265,18 +271,50 @@ arvfakegvcamera.o: arvfakegvcamera.c /usr/include/stdc-predef.h arv.h \
  /usr/include/glib-2.0/gio/gnotification.h \
  /usr/include/glib-2.0/gio/glistmodel.h \
  /usr/include/glib-2.0/gio/gliststore.h \
- /usr/include/glib-2.0/gio/gio-autocleanups.h arvdomnodelist.h \
- arvdomdocument.h arvdomelement.h arvdomcharacterdata.h arvdomtext.h \
- arvdomimplementation.h arvdomparser.h arvcamera.h arvstream.h \
- arvgvstream.h arvgc.h arvgcnode.h arvgcpropertynode.h arvgcfeaturenode.h \
- arvgccategory.h arvgcboolean.h arvgcenumeration.h arvgcenumentry.h \
- arvgcintegernode.h arvgcfloatnode.h arvgcregisternode.h arvgccommand.h \
- arvgcswissknife.h arvgcconverter.h arvgcport.h arvgcregister.h \
- arvgcinteger.h arvgcfloat.h arvgcstring.h arvinterface.h arvdevice.h \
- arvchunkparser.h arvbuffer.h arvgvcp.h arvgvsp.h arvgvinterface.h \
- arvgvdevice.h arvfakeinterface.h arvfakedevice.h arvfakestream.h \
- arvfakecamera.h arvgvfakecamera.h arvrealtime.h arvxmlschema.h \
- /usr/include/stdlib.h /usr/include/arm-linux-gnueabihf/bits/waitflags.h \
+ /usr/include/glib-2.0/gio/gio-autocleanups.h \
+ /home/pi/arv/aravis/src/arvdomnodelist.h \
+ /home/pi/arv/aravis/src/arvdomdocument.h arvdomnode.h \
+ /home/pi/arv/aravis/src/arvdomelement.h \
+ /home/pi/arv/aravis/src/arvdomcharacterdata.h \
+ /home/pi/arv/aravis/src/arvdomtext.h arvdomcharacterdata.h \
+ /home/pi/arv/aravis/src/arvdomimplementation.h arvdomdocument.h \
+ /home/pi/arv/aravis/src/arvdomparser.h \
+ /home/pi/arv/aravis/src/arvcamera.h arvstream.h arvgvstream.h \
+ /home/pi/arv/aravis/src/arvgc.h /home/pi/arv/aravis/src/arvgcnode.h \
+ arvdomelement.h /home/pi/arv/aravis/src/arvgcpropertynode.h arvgcnode.h \
+ /home/pi/arv/aravis/src/arvgcfeaturenode.h \
+ /home/pi/arv/aravis/src/arvgccategory.h arvgcfeaturenode.h \
+ /home/pi/arv/aravis/src/arvgcboolean.h arvgcpropertynode.h \
+ /home/pi/arv/aravis/src/arvgcenumeration.h \
+ /home/pi/arv/aravis/src/arvgcenumentry.h \
+ /home/pi/arv/aravis/src/arvgcintegernode.h \
+ /home/pi/arv/aravis/src/arvgcfloatnode.h \
+ /home/pi/arv/aravis/src/arvgcregisternode.h \
+ /home/pi/arv/aravis/src/arvgccommand.h \
+ /home/pi/arv/aravis/src/arvgcswissknife.h \
+ /home/pi/arv/aravis/src/arvgcconverter.h \
+ /home/pi/arv/aravis/src/arvgcport.h \
+ /home/pi/arv/aravis/src/arvgcregister.h \
+ /home/pi/arv/aravis/src/arvgcinteger.h \
+ /home/pi/arv/aravis/src/arvgcfloat.h \
+ /home/pi/arv/aravis/src/arvgcstring.h \
+ /home/pi/arv/aravis/src/arvinterface.h arvdevice.h arvchunkparser.h \
+ arvgc.h /home/pi/arv/aravis/src/arvdevice.h \
+ /home/pi/arv/aravis/src/arvstream.h /home/pi/arv/aravis/src/arvbuffer.h \
+ /home/pi/arv/aravis/src/arvchunkparser.h \
+ /home/pi/arv/aravis/src/arvgvcp.h arvdebug.h \
+ /home/pi/arv/aravis/src/arvgvsp.h arvbuffer.h \
+ /home/pi/arv/aravis/src/arvgvinterface.h arvinterface.h \
+ /home/pi/arv/aravis/src/arvgvdevice.h \
+ /home/pi/arv/aravis/src/arvgvstream.h \
+ /home/pi/arv/aravis/src/arvfakeinterface.h \
+ /home/pi/arv/aravis/src/arvfakedevice.h \
+ /home/pi/arv/aravis/src/arvfakestream.h arvfakecamera.h \
+ /home/pi/arv/aravis/src/arvfakecamera.h \
+ /home/pi/arv/aravis/src/arvgvfakecamera.h \
+ /home/pi/arv/aravis/src/arvrealtime.h \
+ /home/pi/arv/aravis/src/arvxmlschema.h /usr/include/stdlib.h \
+ /usr/include/arm-linux-gnueabihf/bits/waitflags.h \
  /usr/include/arm-linux-gnueabihf/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/arm-linux-gnueabihf/bits/stdlib-bsearch.h \
  /usr/include/arm-linux-gnueabihf/bits/stdlib-float.h \
@@ -289,7 +327,7 @@ arvfakegvcamera.o: arvfakegvcamera.c /usr/include/stdc-predef.h arv.h \
 
 arv.h:
 
-arvtypes.h:
+/home/pi/arv/aravis/src/arvtypes.h:
 
 arvenums.h:
 
@@ -577,21 +615,25 @@ arvenums.h:
 
 arvfeatures.h:
 
-arvversion.h:
+/home/pi/arv/aravis/src/arvfeatures.h:
 
-arvdebug.h:
+/home/pi/arv/aravis/src/arvversion.h:
 
-arvmisc.h:
+arvtypes.h:
 
-arvstr.h:
+/home/pi/arv/aravis/src/arvdebug.h:
 
-arvzip.h:
+/home/pi/arv/aravis/src/arvmisc.h:
 
-arvsystem.h:
+/home/pi/arv/aravis/src/arvstr.h:
 
-arvevaluator.h:
+/home/pi/arv/aravis/src/arvzip.h:
 
-arvdomnode.h:
+/home/pi/arv/aravis/src/arvsystem.h:
+
+/home/pi/arv/aravis/src/arvevaluator.h:
+
+/home/pi/arv/aravis/src/arvdomnode.h:
 
 /usr/include/glib-2.0/gio/gio.h:
 
@@ -903,93 +945,125 @@ arvdomnode.h:
 
 /usr/include/glib-2.0/gio/gio-autocleanups.h:
 
-arvdomnodelist.h:
+/home/pi/arv/aravis/src/arvdomnodelist.h:
 
-arvdomdocument.h:
+/home/pi/arv/aravis/src/arvdomdocument.h:
 
-arvdomelement.h:
+arvdomnode.h:
+
+/home/pi/arv/aravis/src/arvdomelement.h:
+
+/home/pi/arv/aravis/src/arvdomcharacterdata.h:
+
+/home/pi/arv/aravis/src/arvdomtext.h:
 
 arvdomcharacterdata.h:
 
-arvdomtext.h:
+/home/pi/arv/aravis/src/arvdomimplementation.h:
 
-arvdomimplementation.h:
+arvdomdocument.h:
 
-arvdomparser.h:
+/home/pi/arv/aravis/src/arvdomparser.h:
 
-arvcamera.h:
+/home/pi/arv/aravis/src/arvcamera.h:
 
 arvstream.h:
 
 arvgvstream.h:
 
-arvgc.h:
+/home/pi/arv/aravis/src/arvgc.h:
+
+/home/pi/arv/aravis/src/arvgcnode.h:
+
+arvdomelement.h:
+
+/home/pi/arv/aravis/src/arvgcpropertynode.h:
 
 arvgcnode.h:
 
-arvgcpropertynode.h:
+/home/pi/arv/aravis/src/arvgcfeaturenode.h:
+
+/home/pi/arv/aravis/src/arvgccategory.h:
 
 arvgcfeaturenode.h:
 
-arvgccategory.h:
+/home/pi/arv/aravis/src/arvgcboolean.h:
 
-arvgcboolean.h:
+arvgcpropertynode.h:
 
-arvgcenumeration.h:
+/home/pi/arv/aravis/src/arvgcenumeration.h:
 
-arvgcenumentry.h:
+/home/pi/arv/aravis/src/arvgcenumentry.h:
 
-arvgcintegernode.h:
+/home/pi/arv/aravis/src/arvgcintegernode.h:
 
-arvgcfloatnode.h:
+/home/pi/arv/aravis/src/arvgcfloatnode.h:
 
-arvgcregisternode.h:
+/home/pi/arv/aravis/src/arvgcregisternode.h:
 
-arvgccommand.h:
+/home/pi/arv/aravis/src/arvgccommand.h:
 
-arvgcswissknife.h:
+/home/pi/arv/aravis/src/arvgcswissknife.h:
 
-arvgcconverter.h:
+/home/pi/arv/aravis/src/arvgcconverter.h:
 
-arvgcport.h:
+/home/pi/arv/aravis/src/arvgcport.h:
 
-arvgcregister.h:
+/home/pi/arv/aravis/src/arvgcregister.h:
 
-arvgcinteger.h:
+/home/pi/arv/aravis/src/arvgcinteger.h:
 
-arvgcfloat.h:
+/home/pi/arv/aravis/src/arvgcfloat.h:
 
-arvgcstring.h:
+/home/pi/arv/aravis/src/arvgcstring.h:
 
-arvinterface.h:
+/home/pi/arv/aravis/src/arvinterface.h:
 
 arvdevice.h:
 
 arvchunkparser.h:
 
+arvgc.h:
+
+/home/pi/arv/aravis/src/arvdevice.h:
+
+/home/pi/arv/aravis/src/arvstream.h:
+
+/home/pi/arv/aravis/src/arvbuffer.h:
+
+/home/pi/arv/aravis/src/arvchunkparser.h:
+
+/home/pi/arv/aravis/src/arvgvcp.h:
+
+arvdebug.h:
+
+/home/pi/arv/aravis/src/arvgvsp.h:
+
 arvbuffer.h:
 
-arvgvcp.h:
+/home/pi/arv/aravis/src/arvgvinterface.h:
 
-arvgvsp.h:
+arvinterface.h:
 
-arvgvinterface.h:
+/home/pi/arv/aravis/src/arvgvdevice.h:
 
-arvgvdevice.h:
+/home/pi/arv/aravis/src/arvgvstream.h:
 
-arvfakeinterface.h:
+/home/pi/arv/aravis/src/arvfakeinterface.h:
 
-arvfakedevice.h:
+/home/pi/arv/aravis/src/arvfakedevice.h:
 
-arvfakestream.h:
+/home/pi/arv/aravis/src/arvfakestream.h:
 
 arvfakecamera.h:
 
-arvgvfakecamera.h:
+/home/pi/arv/aravis/src/arvfakecamera.h:
 
-arvrealtime.h:
+/home/pi/arv/aravis/src/arvgvfakecamera.h:
 
-arvxmlschema.h:
+/home/pi/arv/aravis/src/arvrealtime.h:
+
+/home/pi/arv/aravis/src/arvxmlschema.h:
 
 /usr/include/stdlib.h:
 
